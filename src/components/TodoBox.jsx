@@ -33,7 +33,6 @@ class TodoBox extends Component {
   }
 
   remove(itemId) {
-    console.log("In remove s");
     this.setState({
       items: this.state.items.filter(item => item.id !== itemId)
     });
@@ -54,18 +53,20 @@ class TodoBox extends Component {
 
   render() {
     return (
-      <div>
+      <div className="TodoBox">
         <h1>Ultimate To-do list</h1>
         <h4> That gets the shit done.</h4>
-        {this.state.items.map(item => (
-          <TodoItem
-            name={item.name}
-            key={item.id}
-            id={item.id}
-            removefunc={this.remove}
-            editfunc={this.edit}
-          />
-        ))}
+        <div className="TodoBox-items">
+          {this.state.items.map(item => (
+            <TodoItem
+              name={item.name}
+              key={item.id}
+              id={item.id}
+              removefunc={this.remove}
+              editfunc={this.edit}
+            />
+          ))}
+        </div>
 
         <div>
           <form onSubmit={this.handleSubmit}>
