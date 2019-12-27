@@ -33,16 +33,18 @@ class TodoBox extends Component {
   }
 
   remove(itemId) {
+    console.log("In remove s");
     this.setState({
       items: this.state.items.filter(item => item.id !== itemId)
     });
   }
 
-  edit(itemId) {
+  edit(itemId, newName) {
     this.setState({
-      items: this.state.items.filter(item => {
+      items: this.state.items.map(item => {
         if (item.id === itemId) {
-          let newItem = { ...{ item } };
+          let newItem = { name: newName, id: itemId };
+          return newItem;
         } else {
           return item;
         }

@@ -24,7 +24,7 @@ class TodoItem extends Component {
   }
 
   handleSubmit(evt) {
-    this.props.editfunc(this.props.id);
+    this.props.editfunc(this.props.id, this.state.name);
     this.setState({ isEditing: false, name: this.state.name });
   }
 
