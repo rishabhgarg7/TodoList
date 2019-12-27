@@ -69,8 +69,10 @@ class TodoBox extends Component {
         </div>
 
         <div>
+          <br />
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="nameOfItem">New Todo</label>
+            <br />
             <input
               type="text"
               value={this.state.nameOfItem}
