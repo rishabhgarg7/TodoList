@@ -39,12 +39,21 @@ class TodoItem extends Component {
               onChange={this.handleChange}
               name="name"
             />
+            <button>Save</button>
           </form>
         ) : (
           <h3>{this.props.name}</h3>
         )}
-        <button onClick={this.handleDelete}>Delete</button>
-        <button onClick={this.handleEdit}>Edit</button>
+        {this.state.isEditing ? (
+          ""
+        ) : (
+          <button onClick={this.handleDelete}>Delete</button>
+        )}
+        {this.state.isEditing ? (
+          ""
+        ) : (
+          <button onClick={this.handleEdit}>Edit</button>
+        )}
       </div>
     );
   }
