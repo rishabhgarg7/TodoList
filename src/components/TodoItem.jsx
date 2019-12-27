@@ -11,6 +11,7 @@ class TodoItem extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // two methods: show up everytime except when editing mode is on.
   handleDelete() {
     this.props.removefunc(this.props.id);
   }
@@ -18,6 +19,8 @@ class TodoItem extends Component {
   handleEdit(evt) {
     this.setState({ isEditing: true });
   }
+
+  // two methods : when editing of todo item will be done
 
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });

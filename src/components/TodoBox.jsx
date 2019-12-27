@@ -17,6 +17,7 @@ class TodoBox extends Component {
 
   // form related methods
   handleSubmit(evt) {
+    // submit the form
     evt.preventDefault();
     let newItem = {
       id: uuid(),
@@ -30,18 +31,21 @@ class TodoBox extends Component {
   }
 
   handleChange(evt) {
+    // handle input changes
     this.setState({ [evt.target.name]: evt.target.value });
   }
 
   // to-do item related methods
 
   remove(itemId) {
+    //remove or delete the item
     this.setState({
       items: this.state.items.filter(item => item.id !== itemId)
     });
   }
 
   edit(itemId, newName) {
+    // edit the todo item
     this.setState({
       items: this.state.items.map(item => {
         if (item.id === itemId) {
