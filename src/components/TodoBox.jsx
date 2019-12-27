@@ -15,6 +15,7 @@ class TodoBox extends Component {
     this.edit = this.edit.bind(this);
   }
 
+  // form related methods
   handleSubmit(evt) {
     evt.preventDefault();
     let newItem = {
@@ -31,6 +32,8 @@ class TodoBox extends Component {
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });
   }
+
+  // to-do item related methods
 
   remove(itemId) {
     this.setState({
