@@ -12,6 +12,7 @@ class TodoBox extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.remove = this.remove.bind(this);
+    this.edit = this.edit.bind(this);
   }
 
   handleSubmit(evt) {
@@ -37,6 +38,18 @@ class TodoBox extends Component {
     });
   }
 
+  edit(itemId) {
+    this.setState({
+      items: this.state.items.filter(item => {
+        if (item.id === itemId) {
+          let newItem = { ...{ item } };
+        } else {
+          return item;
+        }
+      })
+    });
+  }
+
   render() {
     return (
       <div>
@@ -48,6 +61,7 @@ class TodoBox extends Component {
             key={item.id}
             id={item.id}
             removefunc={this.remove}
+            editfunc={this.edit}
           />
         ))}
 
